@@ -252,7 +252,7 @@ def _compilation_database_aspect_impl(target, ctx):
 
     cc_toolchain = find_cpp_toolchain(ctx)
     feature_configuration = cc_common.configure_features(
-        ctx = ctx,
+        # ctx = ctx, # API change: only available in more recent versions of bazel
         cc_toolchain = cc_toolchain,
         requested_features = ctx.features,
         unsupported_features = ctx.disabled_features,
